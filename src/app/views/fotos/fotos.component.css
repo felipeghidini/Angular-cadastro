@@ -1,0 +1,44 @@
+.main-container{
+    width: 100%;
+    height: 100%;
+    position: absolute; /* or absolute */
+     top: 55%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+
+.flip-container {
+    width: 380px;
+    height: 250px;
+    perspective: 600px;
+  }
+  .task-card{
+    max-width: 400px;
+    text-align: center; 
+    align-content: center;
+    margin-left: 10px;
+    margin-bottom: 30px;
+  }
+
+.flipper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.back{
+    transform: rotateY(180deg);
+}
+
+.flip-container:hover .flipper{
+    transform: rotateY(180deg);
+}
+

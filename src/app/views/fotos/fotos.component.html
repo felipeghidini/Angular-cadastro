@@ -1,0 +1,25 @@
+<div class="container main-container">
+    <mat-paginator [pageSizeOptions]="[3, 6, 9]"
+            [pageSize]="6"
+            [length]="resultsLength">
+    </mat-paginator>
+    <div *ngIf="dataSource" class="row text-center">
+        <mat-card *ngFor="let foto of obs | async" class="task-card" >
+            <div class="flip-container">
+                <mat-card-header class="header">
+                    <mat-card-title>{{foto.title}}</mat-card-title>
+                    
+                </mat-card-header>
+                <div class="flipper">
+                    <div class="front">
+                        
+                        <img mat-card-image src="{{ foto.thumbnailUrl }}" style= "height: 150px; width: 150px; margin-top: 5px;">                       
+                    </div>
+                    <div class="back">                       
+                        <img mat-card-image src="{{ foto.url }}" style= "height: 200px; width: 200px; margin-top: 5px;">                        
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
